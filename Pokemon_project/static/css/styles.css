@@ -1,0 +1,461 @@
+/* General Styles */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #1e1e1e;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Navigation */
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #333333;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+/* Pokémon Entries (Centered Grid) */
+.pokemon-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.pokemon-card {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.05);
+}
+
+.pokemon-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.pokemon-card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.pokemon-card p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Form Styles */
+form {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+form select,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+form select {
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+
+form button {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #333333;
+}
+
+/* Comparison Results - Improved Layout */
+.comparison-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.comparison-card {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.comparison-card:hover {
+    transform: scale(1.05);
+}
+
+/* Stats Table */
+.stats-table {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.stats-table th,
+.stats-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.stats-table th {
+    background-color: #2a2a2a;
+}
+
+.stats-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Radar Chart */
+.text-center img {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+/* Download Button in /statistics */
+.download-btn {
+    background-color: #ffcc00;
+    color: #121212;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.download-btn:hover {
+    background-color: #ffdb4d;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    .comparison-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Pokémon List Table */
+.table {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.table thead {
+    background-color: #2a2a2a;
+    font-weight: bold;
+}
+
+.table th, 
+.table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.table tr:hover {
+    background-color: #292929;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .table {
+        width: 100%;
+        font-size: 14px;
+    }
+    .table th, .table td {
+        padding: 8px;
+    }
+}
+
+/* Filter Container */
+.filter-container {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Filter Label */
+.filter-label {
+    font-size: 18px;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+/* Filter Dropdown */
+.filter-dropdown {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-dropdown:hover {
+    background-color: #333333;
+}
+
+.filter-dropdown option {
+    background-color: #1e1e1e;
+}
+
+/* Pokémon Table */
+.table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+    color: #ffffff;
+}
+
+.table th {
+    background-color: #2a2a2a;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Table Hover Effect */
+.table tbody tr:hover {
+    background-color: #333333;
+    cursor: pointer;
+}
+
+/* Download Button */
+.download-btn {
+    background-color: #ffcc00;
+    color: #121212;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.download-btn:hover {
+    background-color: #ffdb4d;
+}
+
+/* Card Styling for Graphs */
+.stat-card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+/* Card Header */
+.stat-card .card-header {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 15px;
+}
+
+/* Card Body */
+.stat-card .card-body {
+    padding: 15px;
+}
+
+/* Image Inside Card */
+.stat-img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive Design for Graphs */
+@media (max-width: 768px) {
+    .row .col-md-6 {
+        width: 100%;
+    }
+
+    .download-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Download Button */
+.download-btn {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.download-btn:hover {
+    background-color: #333333;
+}
+
+/* Card and Graph Styles */
+.stat-card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.stat-card .card-header {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 15px;
+    font-size: 18px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.stat-card .card-body {
+    padding: 20px;
+}
+
+.stat-img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .row .col-md-6 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .download-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

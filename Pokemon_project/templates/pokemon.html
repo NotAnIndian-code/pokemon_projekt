@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 style="margin-bottom: 20px; font-size: 28px; font-weight: 600;">Pokémon Saraksts</h1>
+
+<!-- Filter Dropdown -->
+<div class="filter-container">
+    <label for="type-filter" class="filter-label">Filtrēt pēc tipa:</label>
+    <select id="type-filter" onchange="filterPokemon()" class="filter-dropdown">
+        <option value="all">Visi</option>
+        {% for type in unique_types %}
+        <option value="{{ type }}">{{ type }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+<!-- Pokémon Table -->
+<table class="table" id="pokemon-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Type 1</th>
+            <th>Type 2</th>
+            <th>HP</th>
+            <th>Attack</th>
+            <th>Defense</th>
+            <th>Speed</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pokemon in pokemons %}
+        <tr data-type1="{{ pokemon['Type 1'] }}" data-type2="{{ pokemon['Type 2'] if pokemon['Type 2'] else '' }}">
+            <td>{{ pokemon['#'] }}</td>
+            <td>{{ pokemon['Name'] }}</td>
+            <td>{{ pokemon['Type 1'] }}</td>
+            <td>{{ pokemon['Type 2'] if pokemon['Type 2'] else '-' }}</td>
+            <td>{{ pokemon['HP'] }}</td>
+            <td>{{ pokemon['Attack'] }}</td>
+            <td>{{ pokemon['Defense'] }}</td>
+            <td>{{ pokemon['Speed'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+function filterPokemon() {
+    let filter = document.getElementById("type-filter").value.toLowerCase();
+    let rows = document.querySelectorAll("#pokemon-table tbody tr");
+
+    rows.forEach(row => {
+        let type1 = row.getAttribute("data-type1").toLowerCase();
+        let type2 = row.getAttribute("data-type2").toLowerCase();
+
+        if (filter === "all" || type1 === filter || type2 === filter) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+}
+</script>
+{% endblock %}

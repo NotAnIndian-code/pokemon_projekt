@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 style="margin-bottom: 20px; font-size: 28px; font-weight: 600;">Pokémon Statistikas</h1>
+
+<!-- Download Button -->
+<div class="mb-4">
+    <a href="{{ url_for('download_file') }}" class="download-btn">Lejupielādēt Pokémon csv datus</a>
+</div>
+
+<!-- Average Stats by Type Graph -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card stat-card">
+            <div class="card-header">
+                <h5>Vidējie statu rādītāji pēc veida</h5>
+            </div>
+            <div class="card-body">
+                <img src="data:image/png;base64,{{ plot1 }}" class="img-fluid stat-img" alt="Average Stats by Type">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pokémon Type Distribution and Attack vs Defense by Type Graphs -->
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card stat-card">
+            <div class="card-header">
+                <h5>Pokémon tipa Izplatība</h5>
+            </div>
+            <div class="card-body">
+                <img src="data:image/png;base64,{{ plot2 }}" class="img-fluid stat-img" alt="Type Distribution">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card stat-card">
+            <div class="card-header">
+                <h5>Trieciens pret Aizsardzību pēc tipa</h5>
+            </div>
+            <div class="card-body">
+                <img src="data:image/png;base64,{{ plot3 }}" class="img-fluid stat-img" alt="Attack vs Defense">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Total Stats Distribution Graph -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card stat-card">
+            <div class="card-header">
+                <h5>Kopējo statu rādītāju izplatība</h5>
+            </div>
+            <div class="card-body">
+                <img src="data:image/png;base64,{{ plot4 }}" class="img-fluid stat-img" alt="Total Stats Distribution">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
